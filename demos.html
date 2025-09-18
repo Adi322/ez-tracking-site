@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Videos - EZ Tracking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container d-flex align-items-center">
+      <!-- REMOVED: left menu button -->
+      <a class="navbar-brand text-orange fw-bold" href="index.html">EZ Tracking</a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="tracker.html">Tracking</a></li>
+          <li class="nav-item"><a class="nav-link" href="use-cases.html">Subscription</a></li>
+          <li class="nav-item"><a class="nav-link active" href="demos.html">Demo Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <aside id="ez-sidebar" class="col-12 col-md-3 col-lg-2 p-0 bg-light border-end min-vh-100 sidebar">
+        <div class="d-flex align-items-center justify-content-between px-3 py-3 border-bottom"><span class="fw-semibold">Menu</span></div>
+        <nav class="nav flex-column py-2">
+          <a class="nav-link sidebar-link" href="index.html">Home</a>
+          <a class="nav-link sidebar-link" href="product.html">Product</a>
+                    <a class="nav-link sidebar-link" href="tracker.html">Tracking</a>
+          <a class="nav-link sidebar-link" href="use-cases.html">Subscription</a>
+          <a class="nav-link sidebar-link active" href="demos.html">Demo Videos</a>
+          <a class="nav-link sidebar-link" href="contact.html">Contact</a>
+        </nav>
+      </aside>
+
+      <main class="col py-4">
+        <header class="text-center my-5">
+          <h1>Demo Videos</h1>
+          <p>Explore different perspectives on how EZ Tracking works.</p>
+        </header>
+
+        <section class="section bg-light py-5">
+          <div class="container">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4">
+                <div class="video-card">
+                  <h3 class="text-center">Restaurant Owner</h3>
+                  <div class="video-embed">
+                    <video controls width="100%" style="border-radius: 10px;">
+                      <source src="owner-demo.mp4" type="video/mp4">Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="video-card">
+                  <h3 class="text-center">Customer</h3>
+                  <div class="video-embed">
+                    <video controls width="100%" style="border-radius: 10px;">
+                      <source src="customer-demo.mp4" type="video/mp4">Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="video-card">
+                  <h3 class="text-center">Rider</h3>
+                  <div class="video-embed">
+                    <video controls width="100%" style="border-radius: 10px;">
+                      <source src="rider-demo.mp4" type="video/mp4">Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="text-center py-4">&copy; 2025 EZ Tracking. All rights reserved.</footer>
+      </main>
+    </div>
+  </div>
+  <!-- Simple toggle button (placement is up to you) -->
+<button id="ezMenuToggle" type="button">Hide Menu</button>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (function () {
+    const sidebar = document.getElementById('ez-sidebar');
+    const toggle  = document.getElementById('ezMenuToggle');
+
+    const REMEMBER = false; // flip to true if you want persistence
+
+    function setState(collapsed) {
+      if (!sidebar) return;
+      sidebar.classList.toggle('collapsed', collapsed);
+      if (toggle) {
+        toggle.textContent = collapsed ? '☰ Menu' : 'Hide Menu';
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+      }
+      if (REMEMBER) localStorage.setItem('ezSidebarCollapsed', collapsed ? '1' : '0');
+    }
+
+    const initialCollapsed = REMEMBER && localStorage.getItem('ezSidebarCollapsed') === '1';
+    setState(initialCollapsed);
+
+    toggle?.addEventListener('click', () => {
+      setState(!sidebar.classList.contains('collapsed'));
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary-orange:#ff6b00;--light-orange:#ffece0;--text-dark:#1a1a1a;--text-muted:#555;--footer-bg:#fef6f1}
+body{font-family:'Inter',sans-serif;background-color:#fff;color:var(--text-dark);line-height:1.6}
+header{text-align:center;padding:80px 20px 60px;background-color:var(--light-orange)}
+header h1{font-size:3.2rem;font-weight:700;color:var(--primary-orange)}
+header p{margin-top:20px;font-size:1.25rem;color:var(--text-muted)}
+.btn{margin-top:30px;display:inline-block;background:var(--primary-orange);color:#fff;padding:14px 30px;font-size:1rem;text-decoration:none;border-radius:30px;transition:background .3s ease}
+.btn:hover{background:#e65a00}
+.section{padding:40px 20px;text-align:center}
+.section h2{font-size:2.5rem;margin-bottom:40px;color:var(--primary-orange)}
+.features{display:flex;flex-direction:column;gap:40px;max-width:1000px;margin:0 auto}
+.feature{display:flex;flex-direction:column;align-items:center}
+.feature p{font-size:1.15rem;color:var(--text-dark);max-width:700px;margin:0 auto}
+footer{padding:50px 20px;text-align:center;background-color:var(--footer-bg);color:var(--text-muted);font-size:.95rem}
+.navbar .text-orange{color:var(--primary-orange)!important;font-size:1.5rem}
+.navbar-nav .nav-link{font-weight:500;color:var(--text-dark);margin-left:20px}
+.navbar-nav .nav-link:hover{color:var(--primary-orange)}
+.bg-light{background-color:#fff8f2}
+
+/* VIDEO CARD STYLING */
+.video-card{background:#fff;border:1px solid #ddd;border-radius:16px;padding:20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s ease}
+.video-card:hover{transform:translateY(-5px)}
+.video-card h3{font-size:1.3rem;color:var(--primary-orange);margin-bottom:20px}
+.video-embed{width:100%;height:230px;background-color:#eaeaea;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-weight:600}
+
+/* Responsive */
+@media (max-width:768px){
+  .section h2{font-size:2rem}
+  .video-embed{height:200px}
+  .btn{font-size:.95rem;padding:12px 24px}
+}
+
+/* Contact Page Styling */
+.contact-container{max-width:700px;margin:0 auto;padding:60px 20px;background-color:#fff8f2;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+.contact-container h2{color:var(--primary-orange);font-size:2.2rem;font-weight:600;margin-bottom:30px}
+form .form-label{font-weight:500;color:var(--text-dark)}
+form .form-control{border-radius:12px;padding:12px 16px;font-size:1rem;border:1px solid #ddd}
+form .form-control:focus{border-color:var(--primary-orange);box-shadow:0 0 0 .2rem rgba(255,107,0,.25)}
+form .btn-primary{background-color:var(--primary-orange);border:none;border-radius:30px;padding:12px 28px;font-weight:600;font-size:1rem;margin-top:10px}
+form .btn-primary:hover{background-color:#e65a00}
+footer.bg-light{background-color:var(--footer-bg);color:var(--text-muted);font-size:.95rem}
+
+/* Heads for contact */
+.contact-header{background-color:var(--light-orange);padding:80px 20px 60px;text-align:center}
+.contact-header h2{color:var(--primary-orange);font-size:3rem;font-weight:700;margin-bottom:10px}
+
+/* Feature Titles in Use Cases */
+.feature h3{font-size:1.8rem;color:var(--primary-orange);font-weight:600;margin-bottom:10px;text-align:center}
+#blue{font-size:1.8rem}
+
+.use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-top:40px;text-align:center;max-width:1000px;margin-left:auto;margin-right:auto}
+.use-case-box img{width:60px;height:60px;margin-bottom:15px}
+.use-case-box h4{font-size:1.3rem;font-weight:600;color:var(--primary-orange);margin-bottom:10px}
+.use-case-box p{color:var(--text-muted);font-size:1rem;padding:0 10px}
+
+.try-section{padding:80px 20px;text-align:center}
+.try-container{max-width:720px;margin:0 auto;padding:60px 40px;background-color:var(--light-orange);border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,.03)}
+.try-container h2{font-size:2.5rem;font-weight:700;color:var(--primary-orange);margin-bottom:20px}
+.try-subtext{font-size:1.1rem;color:var(--text-muted);margin-bottom:30px;line-height:1.6}
+.btn-try{padding:14px 36px;font-size:1rem;font-weight:600;background-color:var(--primary-orange);color:#fff;border-radius:30px;text-decoration:none;transition:background .3s ease}
+.btn-try:hover{background-color:#e65a00}
+
+/* ===== EZ SIDE NAVBAR ===== */
+.sidebar{transition:width .2s ease;background:#f8f9fa}
+.sidebar .sidebar-link{padding:.65rem 1rem;color:#495057;font-weight:500}
+.sidebar .sidebar-link:hover{background:#f1f3f5;color:#111}
+.sidebar .sidebar-link.active{background:#ffe8d6;color:#d35400}
+.sidebar.collapsed{width:0!important;min-width:0!important;overflow:hidden;border-right:0}
+
+/* (Removed all #sidebarToggleTop / menu button placement rules) */
+
+/* Taller embed on big screens */
+@media (min-height:800px){.ratio-16x9{min-height:70vh}}
+
+/* === EZ Menu Toggle: pill style + top-left placement (CSS-only) === */
+#ezMenuToggle {
+  /* Look & feel (matches your old orange pill) */
+  appearance: none;
+  border: 0;
+  background: var(--primary-orange);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border-radius: 999px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  transition: background-color .2s ease, box-shadow .2s ease, transform .06s ease;
+
+  /* Placement – no HTML move required */
+  position: fixed;                 /* anchor to the viewport */
+  top: 15.5px;                       /* sits within the navbar height */
+  left: clamp(12px, 2vw, 20px);    /* tasteful edge spacing */
+  z-index: 1100;                   /* above the navbar */
+}
+#ezMenuToggle:hover { background: #e65a00; box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+#ezMenuToggle:active { transform: translateY(1px); }
+
+/* Reserve space so the brand doesn't collide with the fixed button */
+.navbar .container { padding-left: 88px; } /* tweak: 72–96px usually looks great */
+
+/* Mobile tweaks */
+@media (max-width: 576px) {
+  #ezMenuToggle { top: 8px; left: 10px; padding: 7px 14px; font-size: .9rem; }
+  .navbar .container { padding-left: 76px; }
+}
+
+/* ===== Subscriptions (Pricing) ===== */
+.pricing-section header h1 { color: var(--primary-orange); }
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pricing-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:22px 18px;
+  box-shadow:0 6px 24px rgba(0,0,0,.05);
+  text-align:left;
+  position:relative;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pricing-card:hover{
+  transform: translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.pricing-card.popular{
+  border-color:#ffd6b8;
+  box-shadow:0 10px 36px rgba(255,107,0,.15);
+}
+.pricing-badge{
+  position:absolute;
+  top:14px; right:14px;
+  background:#2cc98f;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.4px;
+  padding:4px 8px;
+  border-radius:999px;
+}
+
+.pricing-head h3{
+  margin:0;
+  color:var(--primary-orange);
+  font-weight:700;
+}
+.pricing-head .subtle{
+  color:var(--text-muted);
+}
+
+.price{
+  margin:10px 0 8px;
+  font-size:2rem;
+  font-weight:800;
+  color:#1a1a1a;
+}
+
+.feature-list{
+  list-style:none;
+  margin:12px 0 0;
+  padding:0;
+}
+.feature-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:8px 0;
+  color:var(--text-muted);
+  line-height:1.35;
+}
+
+/* check / cross pills */
+.feature-list li::before{
+  content:"";
+  flex:0 0 18px;
+  height:18px;
+  border-radius:50%;
+  display:inline-block;
+}
+.feature-list li.yes::before{
+  background:
+    radial-gradient(circle at 50% 50%, #2cc98f 0 70%, transparent 71%),
+    conic-gradient(from -45deg at 40% 55%, transparent 0 72%, #2cc98f 0);
+  /* subtle white check using mask */
+  -webkit-mask:
+    radial-gradient(8px at 50% 50%, transparent 6px, #000 7px) padding-box;
+          mask:
+    radial-gradient(8px at 50% 50%, transparent 6px, #000 7px) padding-box;
+  box-shadow: inset 0 0 0 2px #2cc98f;
+}
+.feature-list li.no::before{
+  background:#ff6b6b;
+  box-shadow: inset 0 0 0 2px #ff6b6b;
+  position:relative;
+}
+.feature-list li.no::after{
+  content:"";
+  width:10px;height:2px;background:#fff;
+  position:relative;left:-14px;transform:rotate(45deg);
+  display:inline-block;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.02);
+}
+.feature-list li.no{ color:#8a8a8a; }
+
+.pricing-cta{
+  margin-top:16px;
+  background:var(--primary-orange);
+  color:#fff;border:0;border-radius:999px;
+  padding:10px 16px;font-weight:600;
+  width:100%;
+  transition: background .2s ease, transform .06s ease;
+}
+.pricing-cta:hover{ background:#e65a00 }
+.pricing-cta:active{ transform: translateY(1px) }
+
+/* responsiveness */
+@media (max-width:576px){
+  .price{ font-size:1.8rem; }
+}
